@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3schools.com" xmlns="http://www.w3schools.com" elementFormDefault="qualified">
+	<xs:element name="book" type="fullbookinfo"/>
+
+	<xs:complexType name="authorinfo">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="nationality" type="xs:string"/>
+			<xs:element name="age">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="120"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element> 
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="fullbookinfo">
+		<xs:complexContent>
+			<xs:sequence>
+				<xs:element name="author" type="authorinfo"/>
+				<xs:element name="title" type="xs:string"/>					
+				<xs:element name="vendor" type="xs:string">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Amazon"/>
+							<xs:enumeration value="Chapitre"/>
+							<xs:enumeration value="Abebook"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element> 
+				<xs:element name="price" type="xsd:decimal"/>
+			</xs:sequence>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema> 
