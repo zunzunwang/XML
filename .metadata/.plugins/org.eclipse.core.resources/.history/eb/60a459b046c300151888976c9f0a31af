@@ -1,0 +1,23 @@
+package com.zunzunwang.RESTfulService;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+@Path("currencyConverter")
+public class CurrencyConverter {
+	private String version = "1.0";
+	
+	
+	/**
+	 * 
+	 * @return
+	 * an explanation of the annotations:
+	 */
+	
+	@GET
+    @Path("version")
+    public String version()
+    {
+            return "The current version is " +this.version;
+    }
+
+}

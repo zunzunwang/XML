@@ -1,0 +1,5 @@
+package com.zunzunwang.model;
+
+public class Currency {
+
+}

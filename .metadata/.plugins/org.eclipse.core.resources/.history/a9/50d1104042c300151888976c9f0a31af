@@ -1,0 +1,12 @@
+package com.zunzunwang.RESTfulService;
+
+import javax.ws.rs.core.Application;
+
+public class CurrencyConverterApplication extends Application {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

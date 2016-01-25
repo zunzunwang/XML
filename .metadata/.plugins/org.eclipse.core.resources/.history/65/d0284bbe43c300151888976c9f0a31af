@@ -1,0 +1,43 @@
+package com.zunzunwang.model;
+
+public class Currency {
+	private String name="name";
+	private String country="country";
+	private int yearAdopted=0;
+	private int ID;
+
+	
+	public void set_name(String name){
+		this.name=name;
+		
+	}
+	public void set_country(String country){
+		this.country=country;
+		
+	}
+	public void set_yearAdopted(int yearAdopted){
+		this.yearAdopted=yearAdopted;
+		
+	}
+	public String get_name(){
+		return this.name;
+	}
+	public String get_country(){
+		return this.country;
+	}
+	public int get_yearAdopted(){
+		return this.yearAdopted;
+		
+	}
+	
+	public void set_ID(int ID){
+		this.ID=ID;	
+	}
+	
+	public int get_ID(){
+		return this.ID;
+	}
+	
+
+
+}

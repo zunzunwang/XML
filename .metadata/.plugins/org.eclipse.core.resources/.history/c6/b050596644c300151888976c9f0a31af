@@ -1,0 +1,7 @@
+package com.zunzunwang.RESTfulService;
+
+import javax.ws.rs.Path;
+@Path("currencyConverter")
+public class CurrencyConverter {
+
+}

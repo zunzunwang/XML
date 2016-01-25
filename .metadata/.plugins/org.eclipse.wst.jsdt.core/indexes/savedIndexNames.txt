@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+/Users/zunzunwang/Documents/JAVA_Projet/XML/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2001290603.index
+809169076.index
+117545132.index
+1489805169.index
+3399339441.index
+103185613.index
+2761651424.index
