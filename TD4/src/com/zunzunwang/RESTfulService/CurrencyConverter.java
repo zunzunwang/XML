@@ -1,5 +1,9 @@
 package com.zunzunwang.RESTfulService;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,12 +15,15 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
 
+import com.rest.DB.DBClass;
+import com.rest.util.ToJSON;
 import com.zunzunwang.model.Currency;
 
+import org.codehaus.jettison.json.JSONArray;
+import org.codehaus.jettison.json.JSONObject;
+
+import java.sql.ResultSet;
 
 @Path("currencyConverter")
 
@@ -180,6 +187,46 @@ public class CurrencyConverter {
 		}else{
 			return currencyList;			
 		}		
+	}
+	
+	/**
+	 * http://localhost:8080/TD4/v1/converterApp/currencyConverter/offices/
+	 * @return
+	 */
+	@GET
+	@Path("offices")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getOffices(){
+		
+		DBClass dbclass = new DBClass();
+		Connection connection = dbclass.returnConnection();
+		try {
+			PreparedStatement statement = connection.prepareStatement("SELECT * FROM `office`");
+			ResultSet result= statement.executeQuery();
+			return "test";
+
+			//String ID = result.getString("ID");
+//			String city=result.getString("city");
+//			String manager_name=result.getString("manager_name");
+//			String email=result.getString("email");
+//			String year_founded=result.getString("year_foundedresult");
+//			ToJSON tojson=new ToJSON();
+//			try {
+//				JSONArray jsonarray = tojson.toJSONArray(result);
+//				return "test";
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//				return null;
+//			}		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
+		
+		
 	}
 	
 	
